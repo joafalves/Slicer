@@ -114,12 +114,11 @@ namespace Slicer
                     }
                 }
 
-
                 if (MessageBox.Show("Process Completed on " + fbd.SelectedPath + ". Open Directory?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
                 {
                     ProcessStartInfo runExplorer = new ProcessStartInfo();
                     runExplorer.FileName = "explorer.exe";
-                    runExplorer.Arguments = System.IO.Path.GetDirectoryName(fbd.SelectedPath);
+                    runExplorer.Arguments = fbd.SelectedPath;
                     Process.Start(runExplorer);
                 }
             }
